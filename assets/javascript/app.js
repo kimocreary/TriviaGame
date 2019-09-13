@@ -1,3 +1,26 @@
+var counter = 45;
+var correctAnswers;
+var incorrectAnswers;
+var unanswered;
+var timer;
+
+function endGame (){
+
+}
+
+function timeUp () {
+    clearInterval(timer);
+}
+
+
+function countDown() {
+    counter--;
+    $('#time').html('Time Remaining: '  + counter);
+        if (counter === 0) {
+            timeUp();
+        }
+}
+
 $("#game").hide()
 console.log("javascript file")
 var quizQuestions = [
@@ -23,9 +46,14 @@ var quizQuestions = [
     
 ]
 $("#startGame").on("click", function(event) {
+    counter = 45;
+    timer = setInterval(countDown, 1000);
+
     event.preventDefault();
     $("#game").show()
     $("#startGame").hide()
+    $("#time").html('Time Remaining: '  + counter);
+
     displayQuestion()
 });
 
@@ -43,6 +71,10 @@ var displayQuestion = function() {
   $("#game").append(`<br> <button class = "btn-primary" id="answer"> submit answer</button>`)  
 }
 
+
+$(document).on('click', 'choices', function() {
+    console.log(youwin);
+});
 // User clicks the start button
 
     // Start page disappears
