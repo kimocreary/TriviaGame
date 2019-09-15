@@ -1,15 +1,40 @@
 var counter = 45;
-var correctAnswers;
-var incorrectAnswers;
+var correctAnswers = 0;
+var incorrectAnswers = 0;
 var unanswered;
 var timer;
 
 function endGame (){
 
+    console.log("this is working");
+
+    var gameArea = $("#game") 
+    var selections = gameArea.children("input:checked");
+    console.log(selections);
+
+    for  (var i =0; i < selections.length; i++) {
+        
+        if( selections[i].value === quizQuestions[i].correctAnswer) {
+            console.log("this is the correct answer")
+            correctAnswers++
+        }else {
+            console.log("incorrectanswer")
+            incorrectAnswers++
+        }
+
+    }
+    console.log(correctAnswers, "correct Answer");
+    console.log(incorrectAnswers, "incorrect Answer");
+    
+    $("#game").empty();
+    $("#time").hide();
+    displayResult();
 }
 
 function timeUp () {
     clearInterval(timer);
+    endGame();
+    displayResult();
 }
 
 
@@ -72,9 +97,21 @@ var displayQuestion = function() {
 }
 
 
-$(document).on('click', 'choices', function() {
-    console.log(youwin);
-});
+$(document).on('click', '#answer', function() {
+    endGame()
+})
+function displayResult() {
+    const result = (`
+    <p> Correct Answers ${correctAnswers} questions(s) right </p>
+    <p> Incorrect Answers ${incorrectAnswers} questions(s)right</p>
+    `)
+    // <p> Correct Answers ${score} questions(s) </p>
+    // <p> Incorrect Answers ${lost} questions(s)</p>;
+    
+    
+
+    $('#game').html(result);
+}
 // User clicks the start button
 
     // Start page disappears
