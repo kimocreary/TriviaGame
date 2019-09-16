@@ -102,8 +102,8 @@ $(document).on('click', '#answer', function() {
 })
 function displayResult() {
     const result = (`
-    <p> Correct Answers ${correctAnswers} questions(s) right </p>
-    <p> Incorrect Answers ${incorrectAnswers} questions(s)right</p>
+    <p> Correct Answers: ${correctAnswers} questions </p>
+    <p> Incorrect Answers: ${incorrectAnswers} questions </p>
     `)
     // <p> Correct Answers ${score} questions(s) </p>
     // <p> Incorrect Answers ${lost} questions(s)</p>;
