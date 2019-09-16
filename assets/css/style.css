@@ -1,14 +1,17 @@
 body {
-    background-color: teal;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCtk2jqGhUjTr067vwXWGrFY3R4EmkyzU8FAbpP-ZDTkV5ElpG4w")
+
 }
 
-#startBox {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCtk2jqGhUjTr067vwXWGrFY3R4EmkyzU8FAbpP-ZDTkV5ElpG4w")
+.container {
+
+    background-color: teal;
+
 }
 
 
 #StartPage {
-    
+
     border: 1px green;
     width: 90%;
     height: 400px;
